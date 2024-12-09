@@ -1,6 +1,6 @@
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
-import "dotenv/config"
+import "dotenv/config";
 // ℹ️ Connects to the database
 
 // Handles http requests (express is node js framework)
@@ -11,12 +11,13 @@ const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 import configMiddleware from "./config"
-configMiddleware(app)
+configMiddleware(app);
 // 👇 Start handling routes here
 import indexRoutes from "./routes/index.routes";
 app.use("/api", indexRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 import errorHandling from "./error-handling";
-errorHandling(app)
+errorHandling(app);
+
 export default app;
