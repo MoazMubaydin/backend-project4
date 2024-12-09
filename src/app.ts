@@ -16,6 +16,8 @@ configMiddleware(app);
 import indexRoutes from "./routes/index.routes";
 app.use("/api", indexRoutes);
 
+import mealRoutes from "./routes/meal.routes"
+app.use("/api", mealRoutes)
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 import errorHandling from "./error-handling";
 errorHandling(app);
