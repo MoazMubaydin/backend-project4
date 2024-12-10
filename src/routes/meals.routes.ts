@@ -14,6 +14,13 @@ router.post(
     try {
       const { name, time, day, recipe_id } = req.body;
 
+      const recipe = await prisma.recipe.findUnique({
+        where: { id: recipe_id },
+      });
+      if (!recipe) {
+        res.status(404).json({ message: "Recipe not found" });
+        return;
+      }
       const newMeal = { name, time, day, recipe_id };
       const response = await prisma.meal.create({ data: newMeal });
       res.status(201).json(response);
