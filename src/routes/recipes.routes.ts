@@ -23,7 +23,7 @@ router.post("/recipes", async (req: RequestCreateRecipe, res: Response) => {
   } catch (error) {
     console.log(error);
     res
-      .json(500)
+      .status(500)
       .json({ message: "Internal server Error while creating a new recipe. " });
   }
 });
@@ -35,7 +35,7 @@ router.get("/recipes", async (req: Request, res: Response) => {
   } catch (error) {
     console.log(error);
     res
-      .json(500)
+      .status(500)
       .json({ message: "Internal server Error while fetching recipes. " });
   }
 });
@@ -57,7 +57,7 @@ router.get("/recipes/:id", async (req: Request, res: Response) => {
   } catch (error) {
     console.log(error);
     res
-      .json(500)
+      .status(500)
       .json({ message: "Internal server Error while fetching recipes. " });
   }
 });
@@ -84,7 +84,7 @@ router.patch(
     } catch (error) {
       console.log(error);
       res
-        .json(500)
+        .status(500)
         .json({ message: "Internal server Error while updating recipe." });
     }
   }
