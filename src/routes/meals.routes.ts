@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 
-import express from "express";
-
 import { Router } from "express";
 
 import prisma from "../db/index";
