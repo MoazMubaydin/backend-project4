@@ -100,7 +100,7 @@ router.delete("/recipes/:id", async (req: Request, res: Response) => {
   } catch (error) {
     console.log(error);
     res
-      .json(500)
+      .status(500)
       .json({ message: "Internal server Error while deleting recipes. " });
   }
 });
